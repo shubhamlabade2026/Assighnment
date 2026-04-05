@@ -1,20 +1,20 @@
 {
   "version": 2,
   "buildCommand": "npm install --include=dev && prisma generate && tsc",
+  "outputDirectory": ".",
   "env": {
     "DATABASE_URL": "file:/tmp/dev.db",
     "JWT_SECRET": "finance-dashboard-secret-2026"
   },
-  "builds": [
-    {
-      "src": "dist/app.js",
-      "use": "@vercel/node"
+  "functions": {
+    "dist/app.js": {
+      "runtime": "@vercel/node@5"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "dist/app.js"
+      "source": "/(.*)",
+      "destination": "/dist/app.js"
     }
   ]
 }
