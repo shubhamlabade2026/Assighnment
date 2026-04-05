@@ -8,7 +8,7 @@
   },
   "functions": {
     "dist/app.js": {
-      "runtime": "@vercel/node@5"
+      "runtime": "@vercel/node"
     }
   },
   "rewrites": [
