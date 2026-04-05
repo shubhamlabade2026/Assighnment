@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "installCommand": "npm install --include=dev",
+  "buildCommand": "prisma generate && tsc",
   "env": {
     "DATABASE_URL": "file:/tmp/dev.db",
     "JWT_SECRET": "finance-dashboard-secret-2026"
